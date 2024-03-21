@@ -4,9 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-#springBoot 테스트 - 김태환환
 #- master
-- spingBoot-test
 
 pool:
   vmImage: ubuntu-latest
