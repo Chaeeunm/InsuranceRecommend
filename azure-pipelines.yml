@@ -13,7 +13,7 @@ steps:
   
 - task: Gradle@2
   inputs:
-    workingDirectory: 'gradle/wrapper'
+    workingDirectory: ''
     gradleWrapperFile: 'gradlew'
     gradleOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
