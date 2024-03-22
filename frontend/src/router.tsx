@@ -7,6 +7,7 @@ import NotFoundPage from '@/pages/error/components/NotFoundPage';
 import Home from '@/pages/home';
 import { ToastContainer } from 'react-toastify';
 import Example from './pages/example';
+import Layout from './components/layout/layout';
 
 const pageRoutes = {
   main: '/',
@@ -16,7 +17,9 @@ const pageRoutes = {
 const CommonLayout = () => (
   <RootErrorBoundary>
     <RootSuspense>
-      <Outlet />
+      <Layout>
+        <Outlet />
+      </Layout>
       <ToastContainer />
     </RootSuspense>
   </RootErrorBoundary>
@@ -32,6 +35,7 @@ const router = createBrowserRouter([
         element: <Example />,
         errorElement: <ErrorPage />,
       },
+
       { path: '*', element: <NotFoundPage /> },
     ],
   },
