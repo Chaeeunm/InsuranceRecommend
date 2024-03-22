@@ -24,11 +24,18 @@ steps:
     tasks: 'build'
 
 
-- task: AzureWebApp@1
+# - task: AzureWebApp@1
+#   inputs:
+#     azureSubscription: 'metlife-it-hackathon(c78a7e0d-77b8-4816-b9f7-ac6d97d997be)'
+#     appType: 'webAppLinux'
+#     appName: 'app-metlife-team08'
+#     package: '$(System.DefaultWorkingDirectory)/build/libs/eightseconds-0.0.1-SNAPSHOT.jar'
+#     inlineScript: 'java -jar $(System.DefaultWorkingDirectory)/build/libs/eightseconds-0.0.1-SNAPSHOT.jar'
+
+- task: AzureRmWebAppDeployment@4
   inputs:
+    ConnectionType: 'AzureRM'
     azureSubscription: 'metlife-it-hackathon(c78a7e0d-77b8-4816-b9f7-ac6d97d997be)'
     appType: 'webAppLinux'
-    appName: 'app-metlife-team08'
-    package: '$(System.DefaultWorkingDirectory)/build/libs/eightseconds-0.0.1-SNAPSHOT.jar'
-    ScriptType: 'Inline Script'
-    InlineScript: 'java -jar $(System.DefaultWorkingDirectory)/build/libs/eightseconds-0.0.1-SNAPSHOT.jar'
+    WebAppName: 'app-metlife-team08'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/build/libs/eightseconds-0.0.1-SNAPSHOT.jar'
