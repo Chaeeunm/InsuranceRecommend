@@ -10,6 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- script: |
+    cd gradle/wrapper
+    gradle wrapper
+  displayName: 'Generate Gradle wrapper'
+  
 - task: Gradle@2
   inputs:
     workingDirectory: 'gradle/wrapper'
