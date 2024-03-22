@@ -30,3 +30,5 @@ steps:
     appType: 'webAppLinux'
     appName: 'app-metlife-team08'
     package: '$(System.DefaultWorkingDirectory)/build/libs/eightseconds-0.0.1-SNAPSHOT.jar'
+    ScriptType: 'Inline Script'
+    InlineScript: 'java -jar $(System.DefaultWorkingDirectory)/build/libs/eightseconds-0.0.1-SNAPSHOT.jar'
