@@ -23,6 +23,13 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
 
+- task: AzureCLI@2
+  displayName: 'Azure Login'
+  inputs:
+    azureSubscription: 'metlife-it-hackathon(c78a7e0d-77b8-4816-b9f7-ac6d97d997be)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az login'
 
 - task: AzureWebApp@1
   inputs:
