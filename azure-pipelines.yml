@@ -28,4 +28,4 @@ steps:
     azureSubscription: 'metlife-it-hackathon(c78a7e0d-77b8-4816-b9f7-ac6d97d997be)'
     appType: 'webAppLinux'
     appName: 'app-metlife-team08'
-    package: '$(System.DefaultWorkingDirectory)/build/libs/*.jar'
+    package: '$(System.DefaultWorkingDirectory)/build/libs/eightseconds-0.0.1-SNAPSHOT-plain.jar'
