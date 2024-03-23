@@ -1,4 +1,4 @@
-package com.metlife.eightseconds.domain.controller;
+package com.metlife.eightseconds.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,9 +19,10 @@ public class PersonalInfoController {
 
 	@PostMapping("/personalInfo")
 	public ResponseEntity<ProductResponseDto> postPersonalInfo(
-			@Valid @RequestBody PersonalInfoRequestDto requestDto,
-			@RequestParam(required = true) ProductType productType
+		@Valid @RequestBody PersonalInfoRequestDto requestDto,
+		@RequestParam(required = true) ProductType productType
 	){
+
 		return ResponseEntity.ok(null);
 	}
 }

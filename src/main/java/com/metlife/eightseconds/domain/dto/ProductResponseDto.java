@@ -2,6 +2,8 @@ package com.metlife.eightseconds.domain.dto;
 
 import java.util.List;
 
+import com.metlife.eightseconds.domain.enums.PaymentType;
+import com.metlife.eightseconds.domain.enums.RiskType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,6 +26,11 @@ public class ProductResponseDto {
 	private Integer maxAge; //최대가입연령
 	private String productEtc; //비고
 	private List<CoveredResponseDto> coverResponseList; //보장리스트
-
+	private Integer paymentMinPeriod;
+	private Integer paymentMaxPeriod;
+	private Boolean renewYn;
+	private PaymentType paymentType;
+	private Double interestRate;
+	private RiskType dangerRank;
 
 }

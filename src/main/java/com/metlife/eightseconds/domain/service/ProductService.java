@@ -43,6 +43,10 @@ public class ProductService {
 		//위험 5,6,9,11,14,15,16,17,18,19,21,22,23
 		//초위험 : 14,15
 
+		//DAO에 넘겨줘야 할것 : 보장기간, 보험금, 납입기간, 보험료 타입(0이면 비갱신, 2면 갱신), 보장질병 String List
+
+		//보장기간
+		response.getGuaranteePeriod();
 //DAO에 넘겨줘야 할것 : 보장기간, 보험금, 납입기간, 보험료 타입(0이면 비갱신, 2면 갱신), 보장질병 String List
 
 		//보장기간
@@ -61,14 +65,6 @@ public class ProductService {
 		List<String> coverDisease = response.getCoverDisease();
 
 		RiskType riskType = RiskType.findByCode(Integer.parseInt(response.getJob()));
-
-		return null;
-	}
-
-
-	public ProductResponseDto analysisProduct() {
-
-
 
 		return null;
 	}

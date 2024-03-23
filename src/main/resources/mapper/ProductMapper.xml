@@ -1,31 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- sample -->
+<mapper namespace="com.metlife.eightseconds.domain.dao.ProductDao">
+    <!-- 실제 코드 -->
+<!--    <select id="findByPersonalInfo" parameterType="AiRequestDto" resultType="ProductResponseDto">-->
 
-<mapper namespace="com.metlife.eightseconds.domain.dao.ProductResponseDto">
-    <select id="selectProductId" parameterType="int" resultType="ProductResponseDto">
-        select * from product;
-    </select>
+<!--    </select>-->
 
-    <!-- 보유 질환 list로 값 제외-->
-    <select id="selectProductsNotInList" parameterType="java.util.List" resultType="ProductResponseDto">
-        SELECT * FROM products
-        <where>
-            <if test="excludedValues != null and excludedValues.size() > 0">
-                AND id NOT IN
-                <foreach item="item" collection="excludedValues" open="(" separator="," close=")">
-                    #{item}
-                </foreach>
-            </if>
-        </where>
-    </select>
-
-    <!-- 원하는 요건에 맞는 보험 추출-->
-    <select id="selectProducts" parameterType="java.util.List" resultType="ProductResponseDto">
-        SELECT p.*, c.*
-        FROM product p
-        LEFT JOIN cover c ON p.productId = c.productId
-        WHERE c.covername = '암진단' OR c.coverprice = 100 OR p.productPrice = 5
-        GROUP BY p.productId, p.productName, p.productPrice, c.coverId
+    <!-- test -->
+    <select id="selectProductId" parameterType="Integer" resultType="String">
+        select productName from product
+        where productId = #{productId};
     </select>
 </mapper>
 
