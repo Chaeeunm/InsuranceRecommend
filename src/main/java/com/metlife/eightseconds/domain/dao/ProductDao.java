@@ -1,12 +1,11 @@
 package com.metlife.eightseconds.domain.dao;
 
-import org.springframework.stereotype.Component;
-
 import com.metlife.eightseconds.domain.dto.ProductResponseDto;
-// 임시코드
-@Component
-public class ProductDao {
-	public ProductResponseDto findByPersonalInfo(){
-		return null;
-	}
+import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+@Repository
+public interface ProductDao {
+    ProductResponseDto findByPersonalInfo(int productId);
 }
