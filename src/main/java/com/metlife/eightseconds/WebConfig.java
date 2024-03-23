@@ -7,6 +7,6 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedOrigins("*")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("Content-Type")
-                .exposedHeaders("Custom-Header")
+                .exposedHeaders("Custom-Header");
     }
 }
