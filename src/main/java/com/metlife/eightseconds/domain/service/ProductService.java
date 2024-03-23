@@ -65,7 +65,6 @@ public class ProductService {
 		public List<CoveredResponseDto> makeMockData() {
 			List<CoveredResponseDto> mockDataList = new ArrayList<>();
 
-			// 각각의 CoveredResponseDto를 생성하여 리스트에 추가합니다.
 			mockDataList.add(CoveredResponseDto.builder()
 				.coverId(1)
 				.coverName("암진단")
@@ -94,7 +93,6 @@ public class ProductService {
 				.coverPrice(100)
 				.build());
 
-			// 랜덤으로 몇 개의 데이터를 선택할지 결정합니다.
 			Random random = new Random();
 			int numSelected = random.nextInt(4) + 1; // 1에서 4 사이의 난수를 생성합니다.
 
