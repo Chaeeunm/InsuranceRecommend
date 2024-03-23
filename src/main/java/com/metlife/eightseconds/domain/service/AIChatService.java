@@ -4,9 +4,6 @@ import com.metlife.eightseconds.domain.dto.AiCodeDto;
 import com.metlife.eightseconds.domain.dto.AiRequestDto;
 import com.metlife.eightseconds.domain.dto.PersonalInfoRequestDto;
 import lombok.RequiredArgsConstructor;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
 
