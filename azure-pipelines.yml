@@ -1,0 +1,32 @@
+# Gradle
+# Build your Java project and run tests with Gradle using a Gradle wrapper script.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+- back-deploy2
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  
+- task: Gradle@2
+  inputs:
+    workingDirectory: ''
+    gradleWrapperFile: 'gradlew'
+    gradleOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '17'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml'
+    tasks: 'build'
+
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'metlife-it-hackathon(c78a7e0d-77b8-4816-b9f7-ac6d97d997be)'
+    appType: 'webAppLinux'
+    appName: 'app-metlife-team08'
+    package: '$(System.DefaultWorkingDirectory)/build/libs/eightseconds-0.0.1-SNAPSHOT.jar'
