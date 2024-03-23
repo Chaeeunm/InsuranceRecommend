@@ -44,7 +44,7 @@ public class PersonalInfoController {
         responseDto.setProductName("iM 암보험 무배당 2309");
         responseDto.setProductPrice(710);
         responseDto.setProductDate("2024-12-31");
-        responseDto.setProductType("DISEASE");
+        responseDto.setProductType(requestDto.getProductType().toString());
         responseDto.setProductExp(5);
         responseDto.setMinAge(20);
         responseDto.setMaxAge(65);
