@@ -51,6 +51,8 @@ dependencies {
 
 	implementation 'org.springframework.experimental.ai:spring-ai-azure-openai-spring-boot-starter:0.7.0-SNAPSHOT'
 
+	implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
+	implementation 'org.json:json:20190722'
 }
 
 dependencyManagement {
