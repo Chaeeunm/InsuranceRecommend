@@ -21,4 +21,5 @@ public class CoveredResponseDto {
 
 	private Integer coverPrice;
 
+
 }

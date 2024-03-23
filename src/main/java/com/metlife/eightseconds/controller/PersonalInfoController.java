@@ -11,25 +11,20 @@ import org.springframework.web.bind.annotation.RestController;
 import com.metlife.eightseconds.domain.dto.PersonalInfoRequestDto;
 import com.metlife.eightseconds.domain.dto.ProductResponseDto;
 import com.metlife.eightseconds.domain.enums.ProductType;
+import com.metlife.eightseconds.domain.service.ProductService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
+@RequiredArgsConstructor
 public class PersonalInfoController {
-
-	private final AIChatService aIChatService;
-
-	public PersonalInfoController(AIChatService aIChatService) {
-		this.aIChatService = aIChatService;
-	}
+	private final ProductService productService;
 
 	@PostMapping("/personalInfo")
 	public ResponseEntity<ProductResponseDto> postPersonalInfo(
 		@Valid @RequestBody PersonalInfoRequestDto requestDto
-//		@RequestParam(required = true) ProductType productType
 	){
-		String res = aIChatService.callAi(requestDto);
-		return ResponseEntity.ok(null);
+		return ResponseEntity.ok(productService.recommendProduct(requestDto));
 	}
 }
