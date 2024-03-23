@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.metlife.eightseconds.domain.enums.Disease;
 import com.metlife.eightseconds.domain.enums.Gender;
 
+import com.metlife.eightseconds.domain.enums.ProductType;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,7 @@ public class PersonalInfoRequestDto {
 	private LocalDate birth;
 	@NotNull
 	@Size(min = 1, max = 3)
-	private List<Disease> DiseaseList;
+	private List<Disease> disease;
 	private String analyze;
+	private ProductType productType;
 }
