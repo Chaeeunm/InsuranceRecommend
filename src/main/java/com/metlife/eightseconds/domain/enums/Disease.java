@@ -1,4 +1,4 @@
-package com.metlife.eightseconds.domain.personalInfo.enums;
+package com.metlife.eightseconds.domain.enums;
 
 public enum Disease {
 	BRAIN("뇌혈관질환"),
