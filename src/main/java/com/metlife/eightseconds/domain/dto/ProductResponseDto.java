@@ -32,5 +32,6 @@ public class ProductResponseDto {
 	private PaymentType paymentType;
 	private Double interestRate;
 	private RiskType dangerRank;
+	private String aiResponse;
 
 }

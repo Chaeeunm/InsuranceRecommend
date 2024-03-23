@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 
 @Getter
-public class AIResponse {
+public class AIJsonResponse {
 	@SerializedName("00")
 	private String job;
 	//보장기간
@@ -28,4 +28,7 @@ public class AIResponse {
 	//보장질병
 	@SerializedName("06")
 	private List<String> coverDisease; //“암,심장,갑상선”
+
+	@SerializedName("99")
+	private String aiResponse; //“암,심장,갑상선”
 }
