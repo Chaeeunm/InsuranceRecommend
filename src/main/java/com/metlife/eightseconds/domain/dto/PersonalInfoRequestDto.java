@@ -23,7 +23,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PersonalInfoRequestDto {
-	private Gender gender;
+	private Gender gender; //성별
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate birth;
 	@NotNull
